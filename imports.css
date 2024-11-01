@@ -51,7 +51,7 @@
 }
 
 .switch input:focus+.slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 0px #2196F3;
 }
 
 .switch input:checked+.slider:before {
