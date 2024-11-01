@@ -1,29 +1,43 @@
-// script.js
+// // script.js
 
-// Select checkbox and body elements
-const checkbox = document.getElementById('theme-toggle');
-const body = document.body;
-const timer = document.getElementById("timer");
+// // Select checkbox and body elements
+// const checkbox = document.getElementById('theme-toggle');
+// const body = document.body;
+// const timer = document.getElementById("timer");
+// const time = document.getElementById("time");
+// const navbar = document.getElementById("navbar");
+// // const navbar = document.getElementByClassId("time");
 
-// Check for saved mode in local storage
-if (localStorage.getItem('dark-mode') === 'enabled') {
-    body.classList.add('dark-mode');
-    timer.classList.add("dark-mode");
-    checkbox.checked = true;
-}
 
-// Toggle dark mode on checkbox change
-checkbox.addEventListener('change', () => {
-    if (checkbox.checked) {
-        body.classList.add('dark-mode');
-        timer.classList.add("dark-mode");
-        localStorage.setItem('dark-mode', 'enabled');
-    } else {
-        body.classList.remove('dark-mode');
-        timer.classList.remove("dark-mode");
-        localStorage.setItem('dark-mode', 'disabled');
-    }
-});
+// // Check for saved mode in local storage
+// if (localStorage.getItem('dark-mode') === 'enabled') {
+//     body.classList.add('dark-mode');
+//     timer.classList.add("dark-mode");
+//     time.classList.add("dark-mode");
+//     navbar.classList.add("dark-mode");
+//     checkbox.checked = true;
+// }
+
+// // Toggle dark mode on checkbox change
+// checkbox.addEventListener('change', () => {
+//     if (checkbox.checked) {
+//         body.classList.add('dark-mode');
+//         timer.classList.add("dark-mode");
+//         time.classList.add("dark-mode");
+//         navbar.classList.add("dark-mode");
+//         localStorage.setItem('dark-mode', 'enabled');
+//     } else {
+//         body.classList.remove('dark-mode');
+//         timer.classList.remove("dark-mode");
+//         time.classList.remove("dark-mode");
+//         navbar.classList.remove("dark-mode");
+//         localStorage.setItem('dark-mode', 'disabled');
+//     }
+// });
+
+
+
+
 
 // Set the date we're counting down to
 var countDownDate = new Date("Jan 17, 2025 17:00:00").getTime();
@@ -53,3 +67,25 @@ var x = setInterval(function () {
         document.getElementById("timer").innerHTML = "EXPIRED";
     }
 }, 1000);
+
+
+
+
+
+
+// Function to update the time
+function updateTime() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const formattedTime = `${hours}:${minutes}:${seconds}`;
+
+    // Display the time
+    document.getElementById('time').textContent = formattedTime;
+}
+
+// Initial call to display time immediately
+updateTime();
+// Update the time every second
+setInterval(updateTime, 1000);
