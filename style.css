@@ -1,7 +1,28 @@
-h1 {
+.black {color: black;}
+.white {color: white;}
+.red {color: #a50122;}
+
+body{
+    background-color: white;
+}
+body.dark-mode {
+    background-color: black;
+}
+
+#timer{
     text-align: center;
-    font-size: 72px;
+    font-size: clamp(30px, 5vw, 60px);
     font-family: "Rubik Mono One", monospace;
     font-weight: 400;
     font-style: normal;
+    padding: 10px;
+    color: black;
+}
+
+#timer.dark-mode {
+    color: white;
+}
+
+.switch{
+    margin: 10px;
 }
