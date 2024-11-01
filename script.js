@@ -1,39 +1,26 @@
-// // script.js
+// script.js
 
-// // Select checkbox and body elements
-// const checkbox = document.getElementById('theme-toggle');
-// const body = document.body;
-// const timer = document.getElementById("timer");
-// const time = document.getElementById("time");
-// const navbar = document.getElementById("navbar");
-// // const navbar = document.getElementByClassId("time");
+// Select checkbox and body elements
+const checkbox = document.getElementById('theme-toggle');
 
 
-// // Check for saved mode in local storage
-// if (localStorage.getItem('dark-mode') === 'enabled') {
-//     body.classList.add('dark-mode');
-//     timer.classList.add("dark-mode");
-//     time.classList.add("dark-mode");
-//     navbar.classList.add("dark-mode");
-//     checkbox.checked = true;
-// }
+// Check for saved mode in local storage
+if (localStorage.getItem('dark-mode') === 'enabled') {
+    document.documentElement.setAttribute('data-bs-theme','dark')
+    checkbox.checked = true;
+}
 
-// // Toggle dark mode on checkbox change
-// checkbox.addEventListener('change', () => {
-//     if (checkbox.checked) {
-//         body.classList.add('dark-mode');
-//         timer.classList.add("dark-mode");
-//         time.classList.add("dark-mode");
-//         navbar.classList.add("dark-mode");
-//         localStorage.setItem('dark-mode', 'enabled');
-//     } else {
-//         body.classList.remove('dark-mode');
-//         timer.classList.remove("dark-mode");
-//         time.classList.remove("dark-mode");
-//         navbar.classList.remove("dark-mode");
-//         localStorage.setItem('dark-mode', 'disabled');
-//     }
-// });
+// Toggle dark mode on checkbox change
+checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+        document.documentElement.setAttribute('data-bs-theme','dark')
+        localStorage.setItem('dark-mode', 'enabled');
+    } else {
+        document.documentElement.setAttribute('data-bs-theme','light')
+        localStorage.setItem('dark-mode', 'disabled');
+    }
+});
+
 
 
 
