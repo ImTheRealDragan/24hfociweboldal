@@ -8,6 +8,7 @@ const timer = document.getElementById("timer");
 // Check for saved mode in local storage
 if (localStorage.getItem('dark-mode') === 'enabled') {
     body.classList.add('dark-mode');
+    timer.classList.add("dark-mode");
     checkbox.checked = true;
 }
 
