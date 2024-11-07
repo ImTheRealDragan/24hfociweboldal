@@ -1,3 +1,10 @@
+<?php
+require_once('Admin.php');
+$query = "select * from test";
+$result = mysql_query($con,$query);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,14 +51,28 @@
                             <option value="!">4</option>
                         </select></td>
                     <td><select name="Team_2" id="Team_2">
-                        <option value="!">1</option>
-                        <option value="!">2</option>
-                        <option value="!">3</option>
-                        <option value="!">4</option>
-                    </select></td>
+                            <option value="!">1</option>
+                            <option value="!">2</option>
+                            <option value="!">3</option>
+                            <option value="!">4</option>
+                        </select></td>
                     <td><input type="number" name="Score_1" id="Score_1"></td>
                     <td><input type="number" name="Score_2" id="Score_2"></td>
                 </tr>
+                <tr>
+                    <?php 
+                        while ($row = mysql_fetch_array($result))
+                        {
+                    ?>
+                        <td><?php echo $row['']; ?></td>
+                        <td><?php echo $row['']; ?></td>
+                        <td><?php echo $row['']; ?></td>
+                        <td><?php echo $row['']; ?></td>
+                        <td><?php echo $row['']; ?></td>
+                </tr>
+                <?php
+                        }
+                        ?>
             </tbody>
         </table>
     </form>
